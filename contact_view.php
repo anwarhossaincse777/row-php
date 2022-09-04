@@ -3,7 +3,7 @@
 require 'includes/header.php';
 require 'includes/db_connection.php';
 
-      $read_query = "SELECT * FROM contact_info";
+      $read_query = "SELECT * FROM contact_info where delete_status=1";
 
 
       $datas=mysqli_query($db_connect,$read_query);
@@ -38,15 +38,25 @@ require 'includes/db_connection.php';
                $total_unread= mysqli_fetch_assoc($total_unread_query);
 
 
+               //total soft delete
+
+
+              $total_count_softDelete_query="SELECT COUNT(*) as soft_delete FROM contact_info WHERE delete_status=2";
+              $total_soft_delete_query=mysqli_query($db_connect,$total_count_softDelete_query);
+              $total_soft_delete=mysqli_fetch_assoc($total_soft_delete_query);
+
+
+
+
 ?>
 
     <div class="container">
         <div class="row">
 
-            <div class="col-md-4">
+            <div class="col-md-3">
 
 
-                <h1 class="text-center">Total Message:<?=
+                <h1 class="text-center">Total:<?=
 
 
                 $total_message['total_message'];
@@ -55,16 +65,23 @@ require 'includes/db_connection.php';
 
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
 
-                <h1 class="text-center">Total Read:<?= $total_read['read_message'] ?></h1>
+                <h1 class="text-center"> Read : <?= $total_read['read_message'] ?></h1>
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-3">
 
-                <h1 class="text-center">Total Unread:<?=
+                <h1 class="text-center">Unread : <?=
                 $total_unread['unread_message'];
+                    ?></h1>
+            </div>
+
+            <div class="col-md-3">
+
+                <h1 class="text-center">Soft Delete : <?=
+                $total_soft_delete['soft_delete'];
                     ?></h1>
             </div>
 
@@ -94,6 +111,8 @@ require 'includes/db_connection.php';
                             <?php
 
                             foreach ($datas as $index=>$data){
+
+
 
                             ?>
                             <tr class="
@@ -125,7 +144,7 @@ require 'includes/db_connection.php';
                                     <?php } ?>
 
 
-                                    <a href="contact_delete.php?id=<?=$data["id"]?>"  class="btn btn-danger">Delete</a>
+                                    <a href="contact_delete.php?id=<?=$data["id"]?>"  class="btn btn-danger">Soft Delete</a>
 
                                 </td>
                                 <td>
@@ -145,8 +164,26 @@ require 'includes/db_connection.php';
 
                            }
                             ?>
+
+                            <?php
+
+                            if ($datas->num_rows==0){
+                                ?>
+
+                              <tr><td colspan="6" class="text-center text-danger" >Nothing to  Found</td></tr>
+                                    <?php
+                                  }
+
+                            ?>
+
+
+
+
                             </tbody>
+
                         </table>
+                        <a href="contact_restore_view.php">Click here to restore</a>
+
                     </div>
                 </div>
 

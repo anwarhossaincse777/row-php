@@ -3,7 +3,7 @@ include 'includes/db_connection.php';
 
     $id=$_GET['id'];
 
-    $delete_query="DELETE FROM  contact_info  WHERE id=$id";
-    mysqli_query($db_connect,$delete_query);
+    $soft_delete_query="UPDATE contact_info SET delete_status =2 WHERE id=$id";
+    mysqli_query($db_connect,$soft_delete_query);
     header('location:contact_view.php');
 ?>
