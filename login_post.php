@@ -17,8 +17,10 @@ $find_query="SELECT * FROM users where email='$email' AND password='$password'";
  }
  else{
 
+     $_SESSION['error']=' Your email and password is wrong';
 
-     echo "not match";
+     header('location:dashboard.php');
+
  }
 
 

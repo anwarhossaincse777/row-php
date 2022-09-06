@@ -196,7 +196,8 @@ session_start();
                        <?=$_SESSION['email']?>
                     </p>
                     <p class="designation">
-                        Super Admin
+                        <br>
+                      <a href="logout.php" type="button" class="btn btn-danger">Log Out</a>
                     </p>
                 </div>
             </div>

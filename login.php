@@ -34,6 +34,24 @@
                                 <div class="auth-form-light text-left p-5">
                                     <h2>Login</h2>
                                     <h4 class="font-weight-light">Hello! let's get started</h4>
+                                    <?php
+                                    session_start();
+                                    if (isset($_SESSION['error'])){
+
+                                    ?>
+                                        <div class="alert alert-danger" >
+
+                                            Your email and password is wrong
+
+                                        </div>
+                                    <?php
+
+                                    }
+
+                                    session_destroy();
+
+                                    ?>
+
                                     <form  method="post" action="login_post.php" enctype="multipart/form-data" class="pt-5">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email</label>
