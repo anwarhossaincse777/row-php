@@ -3,7 +3,7 @@
 require 'includes/db_connection.php';
 $name=$_POST['name'];
 $email=$_POST['email'];
-$password=$_POST['password'];
+$password=md5($_POST['password']);
 
 
 $check_user_query="SELECT * FROM users where email='$email'";
@@ -20,8 +20,6 @@ if ($checking_dublicat->num_rows==1){
 }
 
 else{
-
-echo "else";
 
     $insert_user="INSERT INTO `users` (`name`, `email`, `password`) VALUES ('$name','$email','$password')";
 

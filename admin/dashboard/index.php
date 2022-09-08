@@ -1,12 +1,12 @@
 <?php
 session_start();
-require 'includes/db_connection.php';
+require '../../includes/db_connection.php';
 if (!isset($_SESSION['login'])) {
 
     header('location:login.php');
 
 }
-require_once 'includes/dashboard/header.php';
+require_once '../../includes/dashboard/header.php';
 
 ?>
 
@@ -14,7 +14,7 @@ require_once 'includes/dashboard/header.php';
 <?php
 
 
-require_once 'includes/dashboard/sidebar.php';
+require_once '../../includes/dashboard/sidebar.php';
 
 ?>
 
@@ -104,8 +104,8 @@ require_once 'includes/dashboard/sidebar.php';
 
 
 
-<?php
+    <?php
 
-require_once 'includes/dashboard/footer.php';
+    require_once '../../includes/dashboard/footer.php';
 
-?>
+    ?>

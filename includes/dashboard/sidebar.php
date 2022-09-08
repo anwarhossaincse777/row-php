@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 ?>
 <!-- partial -->
 <div class="container-fluid page-body-wrapper">
@@ -119,7 +119,7 @@ session_start();
                     </div>
                     <ul class="chat-list">
                         <li class="list active">
-                            <div class="profile"><img src="images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+                            <div class="profile"><img src="../../includes/dashboard/images/faces/face1.jpg" alt="image"><span class="online"></span></div>
                             <div class="info">
                                 <p>Thomas Douglas</p>
                                 <p>Available</p>
@@ -127,7 +127,7 @@ session_start();
                             <small class="text-muted my-auto">19 min</small>
                         </li>
                         <li class="list">
-                            <div class="profile"><img src="images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+                            <div class="profile"><img src="../../includes/dashboard/images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
                             <div class="info">
                                 <div class="wrapper d-flex">
                                     <p>Catherine</p>
@@ -203,16 +203,37 @@ session_start();
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="dashboard.php">
                 <i class="icon-rocket menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
                 <span class="badge badge-success">New</span>
             </a>
         </li>
+
+
+        <li class="nav-item">
+            <a class="nav-link" href="../../admin/contact/view.php">
+                <i class="icon-envelope menu-icon"></i>
+                <span class="menu-title">Contact Message</span>
+            </a>
+        </li>
+
+
+        <li class="nav-item">
+            <a class="nav-link" href="../../admin/contact/view.php">
+                <i class="icon-envelope menu-icon"></i>
+                <span class="menu-title">Slider</span>
+            </a>
+        </li>
+
+
+
+
+
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
                 <i class="icon-check menu-icon"></i>
-                <span class="menu-title">Page Layouts</span>
+                <span class="menu-title">Contact Message</span>
                 <span class="badge badge-danger">3</span>
             </a>
             <div class="collapse" id="page-layouts">

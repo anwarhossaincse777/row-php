@@ -2,7 +2,7 @@
 session_start();
 require 'includes/db_connection.php';
 $email=$_POST['email'];
-$password=$_POST['password'];
+$password=md5($_POST['password']);
 
 $find_query="SELECT * FROM users where email='$email' AND password='$password'";
 
@@ -12,7 +12,7 @@ $find_query="SELECT * FROM users where email='$email' AND password='$password'";
 
      $_SESSION['login']='login successful;';  //set session data
      $_SESSION['email']=$email;  //set session data
-     header('location:dashboard.php');
+     header('location:admin/dashboard/index.php');
 
  }
  else{
