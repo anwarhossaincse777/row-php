@@ -227,6 +227,14 @@
         </li>
 
 
+        <li class="nav-item">
+            <a class="nav-link" href="../../admin/service/service_view.php">
+                <i class="icon-envelope menu-icon"></i>
+                <span class="menu-title">Services</span>
+            </a>
+        </li>
+
+
 
 
 
