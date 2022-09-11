@@ -235,6 +235,14 @@
         </li>
 
 
+        <li class="nav-item">
+            <a class="nav-link" href="../../admin/portfolio/portfolio_view.php">
+                <i class="icon-envelope menu-icon"></i>
+                <span class="menu-title">Portfolio</span>
+            </a>
+        </li>
+
+
 
 
 

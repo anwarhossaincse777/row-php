@@ -304,19 +304,38 @@ require 'includes/db_connection.php';
             <div class="row">
 
 
+                <?php
+
+                $select_query="SELECT * FROM portfolio ORDER BY id ASC LIMIT 6";
+
+                $item=mysqli_query($db_connect,$select_query);
+
+                ?>
+
+                <?php
+
+                foreach ($item as $items){
+
+
+
+                ?>
                 <div class="col-lg-4 col-md-6 pitem">
                     <div class="speaker-box">
                         <div class="speaker-thumb">
-                            <img src="includes/frontend/assests/img/images/1.jpg" alt="img">
+                            <img src="admin/uploads/<?=$items['p_image']?>" alt="img">
                         </div>
                         <div class="speaker-overlay">
-                            <span>Design</span>
-                            <h4><a href="portfolio-single.html">Hamble Triangle</a></h4>
+                            <span><?=$items['p_name']?></span>
+                            <h4><a href="portfolio-single.html"><?=$items['p_info']?></a></h4>
                             <a href="portfolio-single.html" class="arrow-btn">More information <span></span></a>
                         </div>
                     </div>
                 </div>
 
+                <?php
+
+                }
+                ?>
 
             </div>
         </div>
