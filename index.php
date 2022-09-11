@@ -263,7 +263,19 @@ require 'includes/db_connection.php';
                         <i class="<?=$items['icon']?>"></i>
                         <h3><?=$items['title']?></h3>
                         <p>
-                            <?=$items['description']?>
+                            <?php
+
+
+                          echo  substr($items['description'],0,5);
+
+                          if (strlen($items['description'])>10){
+
+                              echo ".......";
+                          }
+
+
+
+                            ?>
                         </p>
                     </div>
                 </div>
@@ -290,6 +302,8 @@ require 'includes/db_connection.php';
                 </div>
             </div>
             <div class="row">
+
+
                 <div class="col-lg-4 col-md-6 pitem">
                     <div class="speaker-box">
                         <div class="speaker-thumb">
@@ -302,66 +316,8 @@ require 'includes/db_connection.php';
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 pitem">
-                    <div class="speaker-box">
-                        <div class="speaker-thumb">
-                            <img src="includes/frontend/assests/img/images/2.jpg" alt="img">
-                        </div>
-                        <div class="speaker-overlay">
-                            <span>Video</span>
-                            <h4><a href="portfolio-single.html">Dark Beauty</a></h4>
-                            <a href="portfolio-single.html" class="arrow-btn">More information <span></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 pitem">
-                    <div class="speaker-box">
-                        <div class="speaker-thumb">
-                            <img src="includes/frontend/assests/img/images/3.jpg" alt="img">
-                        </div>
-                        <div class="speaker-overlay">
-                            <span>Audio</span>
-                            <h4><a href="portfolio-single.html">Gilroy Limbo.</a></h4>
-                            <a href="portfolio-single.html" class="arrow-btn">More information <span></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 pitem">
-                    <div class="speaker-box">
-                        <div class="speaker-thumb">
-                            <img src="includes/frontend/assests/img/images/4.jpg" alt="img">
-                        </div>
-                        <div class="speaker-overlay">
-                            <span>Design</span>
-                            <h4><a href="portfolio-single.html">Ipsum which</a></h4>
-                            <a href="portfolio-single.html" class="arrow-btn">More information <span></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 pitem">
-                    <div class="speaker-box">
-                        <div class="speaker-thumb">
-                            <img src="includes/frontend/assests/img/images/5.jpg" alt="img">
-                        </div>
-                        <div class="speaker-overlay">
-                            <span>Creative</span>
-                            <h4><a href="portfolio-single.html">Eiusmod tempor</a></h4>
-                            <a href="portfolio-single.html" class="arrow-btn">More information <span></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 pitem">
-                    <div class="speaker-box">
-                        <div class="speaker-thumb">
-                            <img src="includes/frontend/assests/img/images/6.jpg" alt="img">
-                        </div>
-                        <div class="speaker-overlay">
-                            <span>UX/UI</span>
-                            <h4><a href="portfolio-single.html">again there</a></h4>
-                            <a href="portfolio-single.html" class="arrow-btn">More information <span></span></a>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
         </div>
     </section>

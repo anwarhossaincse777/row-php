@@ -21,8 +21,46 @@ require_once '../../includes/dashboard/sidebar.php';
             <hr>
         </div>
 
+        <?php
+        if (isset($_SESSION['no'])):
+           ?>
+
+            <div class="alert">
+
+               <?=$_SESSION['no']?>
+
+            </div>
+
+
+           <?php
+       endif;
+
+       unset($_SESSION['no']);
+        ?>
+
+
         <div class="col-md-8">
             <h2>Services List</h2>
+          <h3>
+
+              Active: <?php
+
+                 $select_count="SELECT COUNT('*') as active FROM service WHERE status=1";
+
+                 $count_query=mysqli_query($db_connect,$select_count);
+
+                  $active=mysqli_fetch_assoc($count_query);
+
+             echo $active['active'];
+
+
+
+              ?>
+
+
+          </h3>
+
+
             <hr>
 
             <table class="table table-bordered">
@@ -38,7 +76,7 @@ require_once '../../includes/dashboard/sidebar.php';
                 <tbody>
                 <?php
 
-                $select_query="SELECT * FROM service";
+                $select_query="SELECT * FROM service ";
 
                 $item=mysqli_query($db_connect,$select_query);
 
@@ -52,8 +90,25 @@ require_once '../../includes/dashboard/sidebar.php';
                     <th scope="row"><?= $items['description']?></th>
                     <th>
 
+                      <?php
+                      if ($items['status']==1):
+
+                      ?>
+                          <a href="service_status.php?id=<?=$items['id']?>&btn=inactive" type="button" class="btn btn-success btn-sm">Inactive</a>
+
+                        <?php
+
+                        else:
+
+                          ?>
+
+                            <a href="service_status.php?id=<?=$items['id']?>&btn=active" type="button" class="btn btn-dribbble btn-sm">Active</a>
+                        <?php
+                        endif;
+
+                        ?>
                         <a href="service_edit.php?id=<?=$items['id']?>" type="button" class="btn btn-info btn-sm">Edit</a>
-                        <a href="se" type="button" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="service_delete.php?id=<?=$items['id']?>" type="button" class="btn btn-danger btn-sm">Delete</a>
 
                     </th>
 
