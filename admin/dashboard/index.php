@@ -6,6 +6,9 @@ if (!isset($_SESSION['login'])) {
     header('location:login.php');
 
 }
+
+$title="Dashboard";
+
 require_once '../../includes/dashboard/header.php';
 
 ?>

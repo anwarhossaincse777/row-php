@@ -1,6 +1,10 @@
 <?php
 require_once '../../auth_check.php';
+
+
+$title="Portfolio";
 require_once '../../includes/dashboard/header.php';
+
 require '../../includes/db_connection.php';
 ?>
 
