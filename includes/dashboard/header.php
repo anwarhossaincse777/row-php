@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../../includes/dashboard/vendors/simple-line-icons/css/simple-line-icons.css">
     <link rel="stylesheet" href="../../includes/dashboard/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="../../includes/dashboard/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->

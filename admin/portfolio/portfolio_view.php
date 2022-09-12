@@ -39,44 +39,43 @@ require_once '../../includes/dashboard/sidebar.php';
         ?>
 
 
-        <div class="col-md-8">
+        <div class="col-md-9">
             <h2>Services List</h2>
             <h3>
 
-                Active: <?php
-
-                $select_count="SELECT COUNT('*') as active FROM service WHERE status=1";
-
-                $count_query=mysqli_query($db_connect,$select_count);
-
-                $active=mysqli_fetch_assoc($count_query);
-
-                echo $active['active'];
-
-
-
-                ?>
+<!--                Active: --><?php
+//
+//                $select_count="SELECT COUNT('*') as active FROM portfolio WHERE status=1";
+//
+//                $count_query=mysqli_query($db_connect,$select_count);
+//
+//                $active=mysqli_fetch_assoc($count_query);
+//
+//                echo $active['active'];
+//
+//
+//
+//                ?>
 
 
             </h3>
 
 
             <hr>
-
-            <table class="table table-bordered">
+            <table id="portfolio_id" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                 <tr>
                     <th scope="col">Serial No</th>
-                    <th scope="col">Icon</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Description</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Portfolio Info</th>
+                    <th scope="col">Image</th>
                     <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php
 
-                $select_query="SELECT * FROM service ";
+                $select_query="SELECT * FROM portfolio ";
 
                 $item=mysqli_query($db_connect,$select_query);
 
@@ -85,28 +84,29 @@ require_once '../../includes/dashboard/sidebar.php';
                     ?>
                     <tr>
                         <th scope="row"><?= $index+1?></th>
-                        <th scope="row">  <i class="<?=$items['icon']?>"></i></th>
-                        <th scope="row"><?= $items['title']?></th>
-                        <th scope="row"><?= $items['description']?></th>
+                        <th scope="row"> <?=ucwords($items['p_name'])?></th>
+                        <th scope="row"><?= $items['p_info']?></th>
+                       <th> <img class="w-100" src="<?=$items['p_image']?>" alt="<?=$items['p_image']?>"></th>
+
                         <th>
 
-                            <?php
-                            if ($items['status']==1):
-
-                                ?>
-                                <a href="service_status.php?id=<?=$items['id']?>&btn=inactive" type="button" class="btn btn-success btn-sm">Inactive</a>
-
-                            <?php
-
-                            else:
-
-                                ?>
-
-                                <a href="service_status.php?id=<?=$items['id']?>&btn=active" type="button" class="btn btn-dribbble btn-sm">Active</a>
-                            <?php
-                            endif;
-
-                            ?>
+<!--                            --><?php
+//                            if ($items['status']==1):
+//
+//                                ?>
+<!--                                <a href="service_status.php?id=--><?//=$items['id']?><!--&btn=inactive" type="button" class="btn btn-success btn-sm">Inactive</a>-->
+<!---->
+<!--                            --><?php
+//
+//                            else:
+//
+//                                ?>
+<!---->
+<!--                                <a href="service_status.php?id=--><?//=$items['id']?><!--&btn=active" type="button" class="btn btn-dribbble btn-sm">Active</a>-->
+<!--                            --><?php
+//                            endif;
+//
+//                            ?>
                             <a href="service_edit.php?id=<?=$items['id']?>" type="button" class="btn btn-info btn-sm">Edit</a>
                             <a href="service_delete.php?id=<?=$items['id']?>" type="button" class="btn btn-danger btn-sm">Delete</a>
 
@@ -124,7 +124,7 @@ require_once '../../includes/dashboard/sidebar.php';
 
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
 
             <h2>Add portfolio</h2>
             <hr>
@@ -155,13 +155,20 @@ require_once '../../includes/dashboard/sidebar.php';
     </div>
 
 
-
-
-
-
-
-
 <?php
 require_once '../../includes/dashboard/footer.php';
 
 ?>
+
+        <script type="text/javascript">
+
+
+            $(document).ready(function () {
+                $('#portfolio_id').DataTable();
+            });
+
+
+
+        </script>
+
+

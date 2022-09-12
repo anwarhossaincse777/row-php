@@ -63,7 +63,7 @@ require_once '../../includes/dashboard/sidebar.php';
 
             <hr>
 
-            <table class="table table-bordered">
+            <table id="service_id" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                 <tr>
                     <th scope="col">Serial No</th>
@@ -164,3 +164,19 @@ require_once '../../includes/dashboard/sidebar.php';
 require_once '../../includes/dashboard/footer.php';
 
 ?>
+
+
+        <script type="text/javascript">
+
+
+            $(document).ready(function () {
+                $('#service_id').DataTable({
+                    pageLength : 5,
+                    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'ALL']]
+
+                });
+            });
+
+
+
+        </script>
