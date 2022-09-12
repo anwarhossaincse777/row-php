@@ -243,6 +243,14 @@
         </li>
 
 
+        <li class="nav-item">
+            <a class="nav-link" href="../../admin/profile/profile.php">
+                <i class="icon-envelope menu-icon"></i>
+                <span class="menu-title">Profile Edit</span>
+            </a>
+        </li>
+
+
 
 
 
