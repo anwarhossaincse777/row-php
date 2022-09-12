@@ -108,7 +108,7 @@ require_once '../../includes/dashboard/sidebar.php';
 
                         ?>
                         <a href="service_edit.php?id=<?=$items['id']?>" type="button" class="btn btn-info btn-sm">Edit</a>
-                        <a href="service_delete.php?id=<?=$items['id']?>" type="button" class="btn btn-danger btn-sm">Delete</a>
+                        <button  type="button"  class="btn btn-danger btn-sm delete_btn" value="service_delete.php?id=<?=$items['id']?>">Delete</button>
 
                     </th>
 
@@ -177,6 +177,41 @@ require_once '../../includes/dashboard/footer.php';
                 });
             });
 
+
+
+        </script>
+
+
+
+<!--        sweetalert-->
+
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+
+                $('.delete_btn').click(function (){
+
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+
+                            var delete_button_value= $(this).val();
+
+                            window.location.href=delete_button_value;
+
+
+                        }
+                    })
+
+                });
+            });
 
 
         </script>
