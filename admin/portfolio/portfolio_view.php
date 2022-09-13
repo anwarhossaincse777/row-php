@@ -111,7 +111,7 @@ require_once '../../includes/dashboard/sidebar.php';
 //                            endif;
 //
 //                            ?>
-                            <a href="service_edit.php?id=<?=$items['id']?>" type="button" class="btn btn-info btn-sm">Edit</a>
+                            <a href="portfolio_edit.php?id=<?=$items['id']?>" type="button" class="btn btn-info btn-sm">Edit</a>
                             <a href="service_delete.php?id=<?=$items['id']?>" type="button" class="btn btn-danger btn-sm">Delete</a>
 
                         </th>
